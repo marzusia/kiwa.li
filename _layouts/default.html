@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>kiwa</title>
+        <link rel="stylesheet" href="/assets/css/main.css">
+    </head>
+    <body>
+        <header>
+            <h1>kiwa</h1>
+            <nav>
+                <ul>
+                    {% assign menu = site.pages | sort: "menu" %}
+                    {% for p in menu %}{% if p.menu %}
+                        <li{% if p.url == page.url %} class="selected"{% endif %}>
+                            {% if p.url != page.url %}<a href="{{ p.url }}">{% endif %}{{ p.title }}{% if p.url != page.url %}</a>{% endif %}
+                        </li>    
+                    {% endif %}{% endfor %}
+                </ul>
+            </nav>
+        </header>
+        <main>
+            {{ content }}
+        </main>
+    </body>
+</html>

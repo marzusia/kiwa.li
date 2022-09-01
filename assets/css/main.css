@@ -1,0 +1,161 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --background-color: #2b2938;
+    --link-color: #c98bec;
+    --heading-color: #92f0b6;
+    --subtle-color: #9f96f3;
+    --text-color: #cecece;
+    --selection-color: #464261;
+    --font-size: 1.6rem;
+    --font-face: 'Ubuntu Mono', monospace;
+    --site-max-width: 468px;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.5;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: var(--font-face);
+    max-width: var(--site-max-width);
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-size: var(--font-size);
+    color: var(--text-color);
+    background: var(--background-color);
+}
+
+::selection {
+    background-color: var(--selection-color);
+}
+
+h1, h2, h3, h4, p, div, blockquote, figure, details, ul, ol, table, strong, em, su {
+    font-size: 100%;
+    font-weight: normal;
+    font-style: normal;
+}
+
+p, blockquote, figure, summary, ul, ol, table, header, main {
+    margin-block: 0 1em;
+}
+
+h1, h2, h3, h4 {
+    margin-block: 0 .75em;
+}
+
+details[open] summary {
+    margin-block: 0 .5em;
+}
+
+details ::marker, ul ::marker, ol ::marker, summary, strong, em {
+    color: var(--subtle-color);
+}
+
+details summary {
+    user-select: none;
+}
+
+ul, ol {
+    padding-inline: 1.5em 0;
+}
+
+ul {
+    list-style-type: "* ";
+}
+
+h1, h2, h3, h4 {
+    color: var(--heading-color);
+}
+
+h1::before {
+    content: "✧·";
+}
+
+h1::after {
+    content: "·✧";
+}
+
+h2::before {
+    content: "## ";
+}
+
+h3::before {
+    content: "### ";
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:focus {
+    outline: 2px solid var(--link-color);
+}
+
+a[href^="http://"]:not([href^="http://kiwa.li"]):not(.noext)::after,
+a[href^="https://"]:not([href^="https://kiwa.li"]):not(.noext)::after,
+a[href^="//"]:not([href^="//kiwa.li"]):not(.noext)::after {
+    content: "";
+    display: inline-block;
+    background: url("../images/ext.svg") bottom right no-repeat;
+    background-size: .875em;
+    width: 1em;
+    height: 1em;
+}
+
+strong::before, strong::after {
+    content: "**";
+}
+
+em::before, em::after {
+    content: "_";
+}
+
+header {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1, header nav ul {
+    margin-block: 0;
+    padding-inline: 0;
+}
+
+header nav ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+header nav ul li:not(:first-child) {
+    margin-inline: .8em 0;
+}
+
+header nav ul li.selected {
+    color: var(--subtle-color);
+}
+
+@media (min-width: 768px) {
+    body {
+        padding: 4rem 1rem 3rem 1rem;
+    }
+
+    header {
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+}
