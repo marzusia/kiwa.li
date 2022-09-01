@@ -7,7 +7,7 @@ menu: 2
 ## nimi pona
 ni li nimi ale a! nimi li pona tawa mi
 
-⚠️ o sona· lipu ni li pini ala·
+⚠️ lipu ni li pini ala· o kama sin·
 
 <details markdown="1">
 <summary>ete</summary>
